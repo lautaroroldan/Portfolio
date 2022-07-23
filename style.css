@@ -1,0 +1,183 @@
+:root{
+    --fntInter: 'Inter',sans-serif;
+    --fntLexend: 'Lexend Deca',sans-serif;
+    --clr-primary: #fff8e8;
+    --clr-accent: #007664;
+    --clr-darkprimary: #4e4637;
+    --clr-lightaccent: #649b92;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: var(--clr-primary);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container{
+    padding: 10%;
+    min-height: 100vh;
+}
+
+.container__title{
+    text-transform: capitalize;
+    font-family: var(--fntInter);
+    color: var(--clr-accent);
+    font-size: 3.5rem;
+    padding: 1.5em 0;
+}
+
+.pageTitle{
+    font-family: var(--fntLexend);
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: var(--clr-lightaccent);
+    font-size: 1.2rem;
+    padding-top: 1em;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100vh;
+    gap: 2em;
+}
+
+.portfolio__item a{
+    width: 100%;
+    height: 100%;
+}
+
+.medium{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.large{
+    grid-column: span 2;
+}
+
+.wide{
+    grid-column: span 2;
+}
+
+.small{
+    grid-row: span 2;
+}
+
+.tall{
+    grid-row: span 2;
+}
+
+.portfolio__item {
+    background: #007664;
+    color: #FFFF;
+    border-radius: 0.25em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.two{
+    background-image: url(/assets/stat-preview.png);
+    background-size: cover;
+    background-position: center;
+    transition: all ease-in-out .3s;
+    position: relative;
+}
+
+.one,.six{
+    background-image: url(/assets/coming-soon.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.five{
+    background-image: url(/assets/pizzashop.png);
+    background-size: cover;
+    background-position: center;
+    transition: all ease-in-out .3s;
+    position: relative;
+}
+
+.four{
+    background-image: url(/assets/nft-card.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.three{
+    background-image: url(/assets/order-summary.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all ease-in-out .3s;
+    position: relative;
+}
+
+
+
+@media (min-width:1200px){
+    .portfolio{
+        display: grid;
+        height: 100vh;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
+    }
+
+.medium{
+grid-row: span 2;
+grid-column: span 2;
+}
+
+.small{
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.large{
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.tall{
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.wide{
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+.portfolio__item{
+    position: relative;
+}
+
+
+.portfolio__item a::before{
+    content: '';
+    display: block;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.7;
+    transition: all ease-in-out .3s;
+}
+
+.portfolio__item a:hover::before{
+    opacity: 0.1;
+}
+
+}
